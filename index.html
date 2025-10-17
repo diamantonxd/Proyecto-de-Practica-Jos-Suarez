@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="EstiloCalculadora.css">
 </head>
 <body>
     <div class="CalculadoraPantalla">
-    <input type="text"id="Calculadoradisplay" disabled>
-    </div>
+    <input type="text"id="CalculadoraDisplay" disabled>
+    
     <div class="CalculadoraBotones">
 
         <button onclick="BotonNro('7')">7</button>
@@ -28,10 +28,11 @@
         <button onclick="PonerOperacion('-')">-</button>
 
         <button onclick="BotonNro('0')">0</button>
-        <button onclick=".">.</button>
-        <button id="clear" value="C">C</button>
+        <button onclick="BotonSigno('.')">.</button>
+        <button onclick="LimpearDispley('C')">C</button>
         <button onclick="PonerOperacion('+')">+</button>
-        <button id="equals" value="=">=</button>
+
+        <button onclick="CalcularOperacion()" id="ResultadoOperacion">=</button>
 
 
 

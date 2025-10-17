@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #040c0e;
+    font-family: Arial, sans-serif;
+}
+
+.CalculadoraPantalla {
+    background-color: #cfcae6a8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    text-align: center;
+}
+
+#CalculadoraDisplay {
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    background-color: #fa8c0e;
+    text-align: right;
+}
+
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #190dc2;
+    color: #00d40b;
+    cursor: pointer;
+}
+
