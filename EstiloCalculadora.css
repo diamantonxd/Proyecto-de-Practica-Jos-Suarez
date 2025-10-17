@@ -3,12 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #040c0e;
+    background-color: #34a2b8;
     font-family: Arial, sans-serif;
 }
 
 .CalculadoraPantalla {
-    background-color: #cfcae6a8;
+    background-color: #645f5f;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -25,18 +25,38 @@ body {
     box-sizing: border-box;
     border: none;
     border-radius: 20px;
-    background-color: #fa8c0e;
-    text-align: right;
+    background-color: #ffffff;
+    color: #00d40b;
 }
 
+
+.CalculadoraBotones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
 
 button {
-    padding: 15px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 30px;
     border: none;
-    border-radius: 10px;
-    background-color: #190dc2;
-    color: #00d40b;
+    border-radius: 20px;
+    background-color: #adacac;
+    color: #1500d4;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
+button:hover {
+    background-color: #ff9100;
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.80);
+}
+
+#ResultadoOperacion {
+    grid-column: span 4;
+    color: #1500d4;
+}
