@@ -20,13 +20,17 @@ function CalcularOperacion() {
     if (OperacionActual === null || MostrarValor === ' ') return;
     const SegundaOperacion = parseFloat(MostrarValor);
     switch (OperacionActual) {
-        case '+': MostrarValor = (PrimeraOperacion + SegundaOperacion).toString();
+        case '+': 
+        MostrarValor = (PrimeraOperacion + SegundaOperacion).toString();
             break;
-        case '-': MostrarValor = (PrimeraOperacion - SegundaOperacion).toString();
+        case '-': 
+        MostrarValor = (PrimeraOperacion - SegundaOperacion).toString();
             break;
-        case '*': MostrarValor = (PrimeraOperacion * SegundaOperacion).toString();
+        case '*': 
+        MostrarValor = (PrimeraOperacion * SegundaOperacion).toString();
             break;
-        case '/': MostrarValor = (PrimeraOperacion / SegundaOperacion).toString();
+        case '/': 
+        MostrarValor = (PrimeraOperacion / SegundaOperacion).toString();
             break;
     }
     ActualizarDisplay(MostrarValor);
@@ -37,7 +41,7 @@ function LimpearDispley() {
     MostrarValor = ' ';
     OperacionActual = null;
     PrimeraOperacion = null;
-    ActualizarDisplay(MostrarValor);
+    ActualizarDisplay();
 }
 
 function ActualizarDisplay(Valor) {
@@ -55,7 +59,6 @@ function BotonSigno() {
         ActualizarDisplay(MostrarValor);
     }
 }
-
 
 
 
