@@ -41,7 +41,7 @@ function LimpearDispley() {
 }
 
 function ActualizarDisplay(Valor) {
-    document.getElementById('CalculadoraDisplay').value = Valor;
+    document.getElementById('CalculadoraDisplay').value = MostrarValor;
 }
 
 function EliminarValor() {
