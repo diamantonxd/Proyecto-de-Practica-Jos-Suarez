@@ -49,5 +49,14 @@ function EliminarValor() {
     ActualizarDisplay(MostrarValor);
 }
 
+function BotonSigno() {
+    if (!MostrarValor.includes('.')) {
+        MostrarValor += '.';
+        ActualizarDisplay(MostrarValor);
+    }
+}
+
+
+
 
 
