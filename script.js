@@ -79,7 +79,7 @@ function Operation(Op) {
 }
     FirstOperand = parseFloat(ValueDisplay);
     CurrentOperation = Op;
-    ValueDisplay = '' + ${Num};
+    ValueDisplay = '';
 }
 
 function CalculateOperation() {
