@@ -1,1 +1,89 @@
 hola yordi 1
+
+        <button onclick="BotonNro('7')">7</button>
+        <button onclick="BotonNro('8')">8</button>        
+        <button onclick="BotonNro('9')">9</button>
+        <button onclick="PonerOperacion('/')">/</button>
+        
+        <button onclick="BotonNro('4')">4</button>
+        <button onclick="BotonNro('5')">5</button>
+        <button onclick="BotonNro('6')">6</button>
+        <button onclick="PonerOperacion('*')">*</button>
+
+        <button onclick="BotonNro('1')">1</button>
+        <button onclick="BotonNro('2')">2</button>
+        <button onclick="BotonNro('3')">3</button>
+        <button onclick="PonerOperacion('-')">-</button>
+
+        <button onclick="BotonNro('0')">0</button>
+        <button onclick="BotonNro('.')">.</button>
+        <button onclick="LimpearDispley('C')">C</button>
+        <button onclick="PonerOperacion('+')">+</button>
+        <button onclick="EliminarValor('«')">«</button>
+        <button onclick="CalcularOperacion()" id="ResultadoOperacion">=</button>
+
+
+
+
+
+let MostrarValor = ' ';
+let OperacionActual = null;
+let PrimeraOperacion = null;
+
+function BotonNro(Nro) {
+    MostrarValor += Nro;
+    ActualizarDisplay(MostrarValor);
+}
+
+function PonerOperacion(Operacion) {
+    if (OperacionActual !== null) {
+        CalcularOperacion();
+    }
+    PrimeraOperacion = parseFloat(MostrarValor);
+    OperacionActual = Operacion;
+    MostrarValor = ' ';
+}
+
+function CalcularOperacion() {
+    if (OperacionActual === null || MostrarValor === ' ') return;
+    const SegundaOperacion = parseFloat(MostrarValor);
+    switch (OperacionActual) {
+        case '+': 
+        MostrarValor = (PrimeraOperacion + SegundaOperacion).toString();
+            break;
+        case '-': 
+        MostrarValor = (PrimeraOperacion - SegundaOperacion).toString();
+            break;
+        case '*': 
+        MostrarValor = (PrimeraOperacion * SegundaOperacion).toString();
+            break;
+        case '/': 
+        MostrarValor = (PrimeraOperacion / SegundaOperacion).toString();
+            break;
+    }
+    ActualizarDisplay(MostrarValor);
+    OperacionActual = null;
+}
+
+function LimpearDispley() {
+    MostrarValor = ' ';
+    OperacionActual = null;
+    PrimeraOperacion = null;
+    ActualizarDisplay();
+}
+
+function ActualizarDisplay(Valor) {
+    document.getElementById('CalculadoraDisplay').value = MostrarValor;
+}
+
+function EliminarValor() {
+    MostrarValor = MostrarValor.slice(0, -1);
+    ActualizarDisplay(MostrarValor);
+}
+
+function BotonSigno() {
+    if (!MostrarValor.includes('.')) {
+        MostrarValor += '.';
+        ActualizarDisplay(MostrarValor);
+    }
+}

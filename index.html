@@ -9,33 +9,36 @@
 <body>
     <div class="CalculadoraPantalla">
 
-    <input type="text"id="CalculadoraDisplay" disabled>
+    <input type="text"id="DisplayCalculadora" disabled>
     
-    <div class="CalculadoraBotones">
+    <div class="CalculatorButtons">
 
-        <button onclick="BotonNro('7')">7</button>
-        <button onclick="BotonNro('8')">8</button>        
-        <button onclick="BotonNro('9')">9</button>
-        <button onclick="PonerOperacion('/')">/</button>
-        
-        <button onclick="BotonNro('4')">4</button>
-        <button onclick="BotonNro('5')">5</button>
-        <button onclick="BotonNro('6')">6</button>
-        <button onclick="PonerOperacion('*')">*</button>
+    <button onclick="ButtonNumber('7')">7</button>
+    <button onclick="ButtonNumber('8')">8</button>
+    <button onclick="ButtonNumber('9')">9</button>
+    <button onclick="Operation('/')">/</button>
 
-        <button onclick="BotonNro('1')">1</button>
-        <button onclick="BotonNro('2')">2</button>
-        <button onclick="BotonNro('3')">3</button>
-        <button onclick="PonerOperacion('-')">-</button>
+    <button onclick="ButtonNumber('4')">4</button>
+    <button onclick="ButtonNumber('5')">5</button>
+    <button onclick="ButtonNumber('6')">6</button>
+    <button onclick="Operation('*')">*</button>
 
-        <button onclick="BotonNro('0')">0</button>
-        <button onclick="BotonNro('.')">.</button>
-        <button onclick="LimpearDispley('C')">C</button>
-        <button onclick="PonerOperacion('+')">+</button>
-        <button onclick="EliminarValor('«')">«</button>
-        <button onclick="CalcularOperacion()" id="ResultadoOperacion">=</button>
+    <button onclick="ButtonNumber('1')">1</button>
+    <button onclick="ButtonNumber('2')">2</button>
+    <button onclick="ButtonNumber('3')">3</button>
+    <button onclick="Operation('-')">-</button>
 
-
+    <button onclick="ButtonNumber('0')">0</button>
+    <button onclick="ButtonSing('.')">.</button>
+    <button onclick="ClearDisplay('C')">C</button>
+    <button onclick="Operation('+')">+</button>
+    
+    
+    <button onclick="ClearValue('«')">«</button>   
+    <button onclick="CalculateOperation()" id="OperationResult">=</button>
+      
+    </div>
+    </div>  
 
 
 

@@ -60,68 +60,99 @@
  *  
 */
 
-let MostrarValor = ' ';
-let OperacionActual = null;
-let PrimeraOperacion = null;
 
-function BotonNro(Nro) {
-    MostrarValor += Nro;
-    ActualizarDisplay(MostrarValor);
+
+
+
+let ValueDisplay = '';
+let CurrentOperation = null;
+let FirstOperand = null;      
+
+function ButtonNumber(Num) {
+    ValueDisplay += Num;
+    UpdateDisplay(ValueDisplay);
 }
 
-function PonerOperacion(Operacion) {
-    if (OperacionActual !== null) {
-        CalcularOperacion();
-    }
-    PrimeraOperacion = parseFloat(MostrarValor);
-    OperacionActual = Operacion;
-    MostrarValor = ' ';
+function Operation(Op) {
+    if (CurrentOperation !== null) {
+        CalculateOperation();
+}
+    FirstOperand = parseFloat(ValueDisplay);
+    CurrentOperation = Op;
+    ValueDisplay = '' + ${Num};
 }
 
-function CalcularOperacion() {
-    if (OperacionActual === null || MostrarValor === ' ') return;
-    const SegundaOperacion = parseFloat(MostrarValor);
-    switch (OperacionActual) {
+function CalculateOperation() {
+    if (CurrentOperation === null || ValueDisplay === '') return;
+    const SecondOperand = parseFloat(ValueDisplay);
+    switch (CurrentOperation) {
         case '+': 
-        MostrarValor = (PrimeraOperacion + SegundaOperacion).toString();
+        ValueDisplay = (FirstOperand + SecondOperand).toString();  
             break;
         case '-': 
-        MostrarValor = (PrimeraOperacion - SegundaOperacion).toString();
+        ValueDisplay = (FirstOperand - SecondOperand).toString();
             break;
         case '*': 
-        MostrarValor = (PrimeraOperacion * SegundaOperacion).toString();
+        ValueDisplay = (FirstOperand * SecondOperand).toString();
             break;
         case '/': 
-        MostrarValor = (PrimeraOperacion / SegundaOperacion).toString();
+        if (SecondOperand === 0) {
+            ValueDisplay = 'Error: Division by zero';
+        }   else {
+            ValueDisplay = (FirstOperand / SecondOperand).toString();
+        }
             break;
     }
-    ActualizarDisplay(MostrarValor);
-    OperacionActual = null;
+    UpdateDisplay(ValueDisplay);
+    CurrentOperation = null;
 }
 
-function LimpearDispley() {
-    MostrarValor = ' ';
-    OperacionActual = null;
-    PrimeraOperacion = null;
-    ActualizarDisplay();
+function ClearDisplay() {
+    ValueDisplay = '';
+    CurrentOperation = null;
+    FirstOperand = null;
+    UpdateDisplay();
 }
 
-function ActualizarDisplay(Valor) {
-    document.getElementById('CalculadoraDisplay').value = MostrarValor;
+function UpdateDisplay(Value) {
+    document.getElementById('DisplayCalculadora').value = ValueDisplay;
 }
 
-function EliminarValor() {
-    MostrarValor = MostrarValor.slice(0, -1);
-    ActualizarDisplay(MostrarValor);
+function ClearValue() {
+    ValueDisplay = ValueDisplay.slice(0, -1);
+    UpdateDisplay(ValueDisplay);
 }
 
-function BotonSigno() {
-    if (!MostrarValor.includes('.')) {
-        MostrarValor += '.';
-        ActualizarDisplay(MostrarValor);
+function ButtonSign() {
+    if (!ValueDisplay.includes('.')) {
+        ValueDisplay += '.';
+        UpdateDisplay(ValueDisplay);
+    }   
+}
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (!isNaN(key)) {
+        ButtonNumber(key);
+    } else if (key === '+') {
+        Operation('+');
+    } else if (key === '-') {
+        Operation('-');
+    } else if (key === '*') {
+        Operation('*');
+    }           
+    else if (key === '/') {
+        Operation('/');
+    } else if (key === 'Enter') {
+        CalculateOperation();
+    } else if (key === 'Backspace') {
+        ClearValue();
+    } else if (key === '.') {
+        ButtonSign();
     }
-}
+});
 
 
 
 
+    

@@ -16,7 +16,7 @@ body {
     text-align: center;
 }
 
-#CalculadoraDisplay {
+#DisplayCalculadora {
     width: 100%;
     height: 60px;
     padding: 15px;
@@ -30,7 +30,7 @@ body {
 }
 
 
-.CalculadoraBotones {
+.CalculatorButtons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
@@ -56,8 +56,7 @@ button:active {
     transform: scale(0.80);
 }
 
-#ResultadoOperacion {
-    grid-column: span 4;
-    color: #1500d4;
+#CalculateOperation {
+    grid-column: span 2;
 }
 
