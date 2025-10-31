@@ -80,6 +80,7 @@ function Operation(Op) {
     FirstOperand = parseFloat(ValueDisplay);
     CurrentOperation = Op;
     ValueDisplay = '';
+    UpdateDisplay(ValueDisplay);
 }
 
 function CalculateOperation() {
@@ -97,7 +98,7 @@ function CalculateOperation() {
             break;
         case '/': 
         if (SecondOperand === 0) {
-            ValueDisplay = 'Error: Division by zero';
+            ValueDisplay = 'Error';
         }   else {
             ValueDisplay = (FirstOperand / SecondOperand).toString();
         }
@@ -151,6 +152,7 @@ document.addEventListener('keydown', function(event) {
         ButtonSign();
     }
 });
+
 
 
 
